@@ -20,5 +20,7 @@ from django.urls import path, include
 from demoapp import views
 
 urlpatterns = [
-    path('', include('demoapp.urls')),
+    path('demo/', include('demoapp.urls')),
+    
+
 ]
