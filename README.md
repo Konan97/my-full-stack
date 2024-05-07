@@ -1,2 +1,2 @@
-# my-first-repo
-practice account for learning Git
+# my-Django-full-stack
+practice account for learning Git, API, Front-end, Back-end project
