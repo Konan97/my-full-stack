@@ -12,15 +12,6 @@ def qryview(request):
     id = request.GET['id']
     return HttpResponse("Name:{} UserID:{}".format(name, id))
 
-def pathview(request, name, price):
-    items = {
-        'URL' : 'uniform resource locator'
-    }
-    description = items[name]
-    return HttpResponse(f"<h2>{name}<h2>" + description)
-# Create your views here.
-
-
 def home(request):
     time = datetime.today()
     path = request.path
@@ -31,8 +22,8 @@ def home(request):
     <p>path: " {}</p>
     <p>method: {}</p></center>
     '''.format(time, path, method)
-    
-    return HttpResponse(content)
+    about_content = {'time': time, 'path': path, 'method': method}
+    return render(request, 'index.html', {'content': about_content})
 
 @csrf_exempt
 def cars(request):

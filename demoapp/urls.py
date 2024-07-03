@@ -3,8 +3,7 @@ from demoapp import views
 
 app_name = 'demoapp'
 urlpatterns = [
-    path('', views.home, name="home"),
-    path('<name>/<int:price>', views.pathview, name = 'pathview'),
-    path('getuser', views.qryview, name='qryview'),
-    path('car', views.cars) # API
+    path('home/', views.home, name="home"),
+    path('getuser/', views.qryview, name='qryview'),
+    path('car/', views.cars) # API
 ]
