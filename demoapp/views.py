@@ -2,15 +2,38 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from datetime import datetime
 from django.db import IntegrityError
-from .models import Car
 from django.views.decorators.csrf import csrf_exempt
 from django.forms.models import model_to_dict
+from datetime import timedelta
+from typing import List
 
+from snowflake.snowpark import Session
+from snowflake.snowpark.functions import col
+from snowflake.core import Root,CreateMode
+from snowflake.core.database import Database
+from snowflake.core.schema import Schema
+from snowflake.core.table import Table, TableColumn, PrimaryKey
+from snowflake.core.warehouse import Warehouse
+from snowflake.core._common import CreateMode
+from snowflake.core.task import StoredProcedureCall, Task
+from snowflake.core.task.dagv1 import DAGOperation, DAG, DAGTask
 
-def qryview(request):
-    name = request.GET['name']
-    id = request.GET['id']
-    return HttpResponse("Name:{} UserID:{}".format(name, id))
+from .models import Car
+
+def snowflake(request):
+    user = "YSUN98@VOLVOCARS.COM"
+    connection_params = {
+    "user": user,
+    "account":"VOLVOCARS-MANUFACTURINGANALYTICS",
+    "authenticator":"externalbrowser",
+    "warehouse": "REPORTING",
+    "database": "VCC",
+    "schema":"PRD_CASTLE_DESIGN"
+    }
+    session = Session.builder.configs(connection_params).create()
+    root = Root(session)
+    return render(request, "index.html", connection_params)
+
 
 def home(request):
     time = datetime.today()
