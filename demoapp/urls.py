@@ -1,9 +1,10 @@
 from django.urls import path
-from demoapp import views
+from .view import snowflake
+from .view import home
 
 app_name = 'demoapp'
 urlpatterns = [
-    path('home/', views.home, name="home"),
-    path('car/', views.cars), # API
-    path('snowflake/', views.snowflake)
+    path('home/', home.home, name="home"),
+    path('car/', snowflake.cars), # API
+    path('snowflake/', snowflake.snowflake)
 ]

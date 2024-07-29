@@ -1,3 +1,6 @@
+/**
+ * botton
+ */
 function Btn(props) {
     const clickHandler = () => console.log('clicked')
     return (

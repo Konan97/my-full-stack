@@ -1,3 +1,6 @@
+/**
+ * Footer
+ */
 function Footer() {
     return (
         <div className="copyright">

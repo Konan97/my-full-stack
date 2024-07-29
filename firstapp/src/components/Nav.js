@@ -1,3 +1,6 @@
+/**
+ * navigation bar
+ */
 import Btn from "./Btn";
 
 function Nav() {

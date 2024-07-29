@@ -1,3 +1,6 @@
+/**
+ * search bar 
+ */
 import React, { useContext } from "react";
 import {SearchContext} from "../providers/SearchProvider";
 

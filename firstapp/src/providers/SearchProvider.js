@@ -1,3 +1,7 @@
+/**
+ * Context API
+ * send data between children inside <SearchContextProvider>
+ */
 import React, { useState } from 'react';
 
 export const SearchContext = React.createContext();
