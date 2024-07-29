@@ -28,9 +28,9 @@ This project demonstrates a full stack application that interacts with a Snowfla
 
 ```plaintext
 .
-├── backend
+├── demoproject (backend)
 │   ├── manage.py
-│   ├── myapp
+│   ├── demoapp
 │   │   ├── __init__.py
 │   │   ├── admin.py
 │   │   ├── apps.py
@@ -38,14 +38,16 @@ This project demonstrates a full stack application that interacts with a Snowfla
 │   │   ├── serializers.py
 │   │   ├── tests.py
 │   │   ├── urls.py
-│   │   └── views.py
-│   ├── myproject
+│   │   └── view
+|   |       ├── home.py
+│   │       └── snowflake.py
+│   ├── demoproject
 │   │   ├── __init__.py
 │   │   ├── asgi.py
 │   │   ├── settings.py
 │   │   ├── urls.py
 │   │   └── wsgi.py
-├── frontend
+├── frontapp (frontend)
 │   ├── public
 │   │   ├── index.html
 │   ├── src
@@ -55,6 +57,7 @@ This project demonstrates a full stack application that interacts with a Snowfla
 │   │   │   ├── DataDisplay.js
 │   ├── package.json
 │   ├── webpack.config.js
+├── env (virtual environment) 
 └── README.md
 ```
 
