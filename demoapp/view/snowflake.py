@@ -1,18 +1,8 @@
 """django imports"""
 from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
-from datetime import datetime
-from django.db import IntegrityError
-from django.views.decorators.csrf import csrf_exempt
-from django.forms.models import model_to_dict
-from datetime import timedelta
-from typing import List
 
 """snowflake imports"""
 from snowflake.snowpark import Session
-from snowflake.snowpark.functions import col
-
-from ..models import Car
 
 def snowflake(request):
     user = "YSUN98@VOLVOCARS.COM"
@@ -29,24 +19,3 @@ def snowflake(request):
     df_sql.show()
     session.close()
     return render(request, "index.html", connection_params)
-
-@csrf_exempt
-def cars(request):
-    if request.method == 'GET':
-        cars = Car.objects.all().values()
-        return JsonResponse({"Cars": list(cars)})
-    elif request.method == 'POST':
-        name = request.POST.get('name')
-        Rfid = request.POST.get('vehicle_type')
-        ATACQ_Item = request.POST.get('ATACQ_Item')
-        car = Car(
-            name = name,
-            Rfid = Rfid,
-            ATACQ_Item = ATACQ_Item
-        )
-        try:
-            car.save()
-        except IntegrityError:
-            return JsonResponse({'error': 'true', 'message': 'required field missing'}, status=400)
-
-    return JsonResponse(model_to_dict(car), status=201) # create
