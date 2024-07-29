@@ -1,23 +1,11 @@
-import {React, useState, createContext} from "react";
+import {React} from "react";
 import logo from './logo.svg';
 import './App.css';
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Search from "./components/Search";
+import SearchContextProvider from "./providers/SearchProvider";
 
-// Create a new context and export
-export const SearchContext = createContext();
-
-// Create a Context Provider
-const SearchContextProvider = ({ children }) => {
-    const [result, setResult] = useState(undefined);
-
-    return (
-      <SearchContext.Provider value={{result, setResult}}>
-        {children}
-      </SearchContext.Provider>
-    );
-};
 
 function App() {
   return (

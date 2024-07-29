@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import {SearchContext} from "../App";
+import {SearchContext} from "../providers/SearchProvider";
 
 export default function Search(){
     const {setResult} = useContext(SearchContext);
