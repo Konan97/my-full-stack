@@ -78,6 +78,12 @@ react-dashboard-app/
 ├── public/
 ├── src/
 │   ├── components/        # Reusable React components
+│   |   ├── Btn.js
+│   |   ├── ChatRoom.js
+│   |   ├── Dropdown.js
+│   |   ├── Footers.js
+│   │   ├── Headers.js
+│   |   └── Search.js
 │   ├── pages/             # Page components (e.g., Dashboards, Search)
 │   ├── assets/            # Static assets (e.g., images, styles)
 │   ├── context/           # Context API files or Redux setup
@@ -113,7 +119,3 @@ Contributions are always welcome! Please follow the [contribution guidelines](CO
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
-
-Feel free to adjust the sections according to your project's specific needs.
