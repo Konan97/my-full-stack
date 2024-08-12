@@ -76,7 +76,7 @@ This project demonstrates a full stack application that interacts with a Snowfla
 
    ```bash
    python3 -m venv venv
-   source venv/bin/activate   # On Windows, use `venv\Scripts\activate`
+   source env/bin/activate   # On Windows, use `env\Scripts\activate`
    ```
 
 3. **Install the dependencies:**
@@ -87,7 +87,7 @@ This project demonstrates a full stack application that interacts with a Snowfla
 
 4. **Configure Snowflake connection:**
 
-   In `myapp/views.py`, configure your Snowflake connection details.
+   In `demoapp/views.py`, configure your Snowflake connection details.
 
    ```python
    from snowflake.snowpark import Session

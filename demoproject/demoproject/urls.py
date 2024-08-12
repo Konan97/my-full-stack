@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from demoapp.urls import post_router
 
+router = DefaultRouter()
+# post
+router.registry.extend(post_router.registry)
 
 urlpatterns = [
     path('', include('demoapp.urls')),

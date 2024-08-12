@@ -1,7 +1,7 @@
 /**
  * Footer
  */
-function Footer() {
+export default function Footer() {
     return (
         <div className="copyright">
             <p>Shop Project SE</p>
@@ -9,5 +9,3 @@ function Footer() {
         </div>
     );
 };
-
-export default Footer;

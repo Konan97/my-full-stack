@@ -18,7 +18,7 @@ export default function Search(){
     return (
         <form method="post" onSubmit={handleSubmit}>
             <label>
-                Text input: <input name = "myInput"/>
+                Enter your username: <input name = "myInput"/>
             </label>
             <button type="submit">Search</button>
         </form>
